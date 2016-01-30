@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>clappr pause resume tab visibility</title>
+  </head>
+  <body>
+    <div id="player"></div>
+    <script type="text/javascript" charset="utf-8">
+      window.onload = function() {
+        var player = new Clappr.Player({
+          parentId: '#player',autoPlay:true, mute: true,
+          plugins: [ClapprPauseTabVisibility],
+          source: 'http://www.sample-videos.com/video/mp4/480/big_buck_bunny_480p_5mb.mp4',
+          height: 360,
+          width: 640,
+          visibilityEnableIcon: true
+        })
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./clappr-pause-tab-visibility.js"></script>
+  </body>
+</html>
