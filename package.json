@@ -1,6 +1,6 @@
 {
   "name": "clappr-pause-tab-visibility",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A clappr plugin to pause/resume when you are in another tab.",
   "main": "index.js",
   "repository": {
