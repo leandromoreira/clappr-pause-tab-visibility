@@ -5,9 +5,11 @@ export default class ClapprPauseTabVisibility extends ContainerPlugin {
 
   bindEvents() {
     var [hidden, visibilityEvent] = this.resoleVisibilityAPI()
+    this.visibilityEvent = visibilityEvent
     this.originalTitle = document.title
+    this.onVisibilityChange = () => this.togglePauseResume(hidden)
 
-    document.addEventListener(visibilityEvent, () => this.togglePauseResume(hidden))
+    document.addEventListener(this.visibilityEvent, this.onVisibilityChange)
   }
 
   resoleVisibilityAPI() {
@@ -38,6 +40,10 @@ export default class ClapprPauseTabVisibility extends ContainerPlugin {
   pause() {
     this.container.pause()
     if (this.options.visibilityEnableIcon) { document.title = `\u23F8  ${this.originalTitle}` }
+  }
+
+  stopListening() {
+    document.removeEventListener(this.visibilityEvent, this.onVisibilityChange)
   }
 }
 
