@@ -1,1 +1,68 @@
-!function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e(require("Clappr")):"function"==typeof define&&define.amd?define(["Clappr"],e):"object"==typeof exports?exports.ClapprPauseTabVisibility=e(require("Clappr")):t.ClapprPauseTabVisibility=e(t.Clappr)}(this,function(t){return function(t){function e(n){if(i[n])return i[n].exports;var r=i[n]={exports:{},id:n,loaded:!1};return t[n].call(r.exports,r,r.exports,e),r.loaded=!0,r.exports}var i={};return e.m=t,e.c=i,e.p="",e(0)}([function(t,e,i){"use strict";function n(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function r(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}Object.defineProperty(e,"__esModule",{value:!0});var o=function(){function t(t,e){var i=[],n=!0,r=!1,o=void 0;try{for(var u,a=t[Symbol.iterator]();!(n=(u=a.next()).done)&&(i.push(u.value),!e||i.length!==e);n=!0);}catch(l){r=!0,o=l}finally{try{!n&&a["return"]&&a["return"]()}finally{if(r)throw o}}return i}return function(e,i){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return t(e,i);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),u=function(){function t(t,e){for(var i=0;i<e.length;i++){var n=e[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(t,n.key,n)}}return function(e,i,n){return i&&t(e.prototype,i),n&&t(e,n),e}}(),a=function(t,e,i){for(var n=!0;n;){var r=t,o=e,u=i;n=!1,null===r&&(r=Function.prototype);var a=Object.getOwnPropertyDescriptor(r,o);if(void 0!==a){if("value"in a)return a.value;var l=a.get;if(void 0===l)return;return l.call(u)}var s=Object.getPrototypeOf(r);if(null===s)return;t=s,e=o,i=u,n=!0,a=s=void 0}},l=i(1),s=function(t){function e(){n(this,e),a(Object.getPrototypeOf(e.prototype),"constructor",this).apply(this,arguments)}return r(e,t),u(e,[{key:"bindEvents",value:function(){var t=this,e=this.resoleVisibilityAPI(),i=o(e,2),n=i[0],r=i[1];this.visibilityEvent=r,this.originalTitle=document.title,this.onVisibilityChange=function(){return t.togglePauseResume(n)},document.addEventListener(this.visibilityEvent,this.onVisibilityChange)}},{key:"resoleVisibilityAPI",value:function(){var t=[],e=["hidden","webkithidden","mozhidden","mshidden","ohidden"],i=["visibilitychange","webkitvisibilitychange","mozvisibilitychange","msvisibility","ovisibility"];return e.forEach(function(e,n){e in document&&(t.push(e),t.push(i[n]))}),t}},{key:"togglePauseResume",value:function(t){var e=document[t]?"pause":"play";t&&this[e]()}},{key:"play",value:function(){this.container.play(),this.options.visibilityEnableIcon&&(document.title=this.originalTitle)}},{key:"pause",value:function(){this.container.pause(),this.options.visibilityEnableIcon&&(document.title="⏸  "+this.originalTitle)}},{key:"stopListening",value:function(){document.removeEventListener(this.visibilityEvent,this.onVisibilityChange)}},{key:"name",get:function(){return"clappr_pause_tab_visibility"}}]),e}(l.ContainerPlugin);e["default"]=s,t.exports=e["default"]},function(e,i){e.exports=t}])});
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("Clappr"));
+	else if(typeof define === 'function' && define.amd)
+		define(["Clappr"], factory);
+	else if(typeof exports === 'object')
+		exports["ClapprPauseTabVisibility"] = factory(require("Clappr"));
+	else
+		root["ClapprPauseTabVisibility"] = factory(root["Clappr"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _slicedToArray=(function(){function sliceIterator(arr,i){var _arr=[];var _n=true;var _d=false;var _e=undefined;try{for(var _i=arr[Symbol.iterator](),_s;!(_n = (_s = _i.next()).done);_n = true) {_arr.push(_s.value);if(i && _arr.length === i)break;}}catch(err) {_d = true;_e = err;}finally {try{if(!_n && _i['return'])_i['return']();}finally {if(_d)throw _e;}}return _arr;}return function(arr,i){if(Array.isArray(arr)){return arr;}else if(Symbol.iterator in Object(arr)){return sliceIterator(arr,i);}else {throw new TypeError('Invalid attempt to destructure non-iterable instance');}};})();var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(_x,_x2,_x3){var _again=true;_function: while(_again) {var object=_x,property=_x2,receiver=_x3;_again = false;if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {_x = parent;_x2 = property;_x3 = receiver;_again = true;desc = parent = undefined;continue _function;}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}var _clappr=__webpack_require__(1);var ClapprPauseTabVisibility=(function(_ContainerPlugin){_inherits(ClapprPauseTabVisibility,_ContainerPlugin);function ClapprPauseTabVisibility(){_classCallCheck(this,ClapprPauseTabVisibility);_get(Object.getPrototypeOf(ClapprPauseTabVisibility.prototype),'constructor',this).apply(this,arguments);}_createClass(ClapprPauseTabVisibility,[{key:'bindEvents',value:function bindEvents(){var _this=this;var _resoleVisibilityAPI=this.resoleVisibilityAPI();var _resoleVisibilityAPI2=_slicedToArray(_resoleVisibilityAPI,2);var hidden=_resoleVisibilityAPI2[0];var visibilityEvent=_resoleVisibilityAPI2[1];this.visibilityEvent = visibilityEvent;this.originalTitle = document.title;this.wasPlaying = false;this.onVisibilityChange = function(){return _this.togglePauseResume(hidden);};console.log('bindEvents');document.addEventListener(this.visibilityEvent,this.onVisibilityChange);}},{key:'resoleVisibilityAPI',value:function resoleVisibilityAPI(){var compatiblePropertyAndEvent=[];var hiddenApi=['hidden','webkithidden','mozhidden','mshidden','ohidden'];var visibilityEventApi=['visibilitychange','webkitvisibilitychange','mozvisibilitychange','msvisibility','ovisibility'];hiddenApi.forEach(function(property,index){if(property in document){compatiblePropertyAndEvent.push(property);compatiblePropertyAndEvent.push(visibilityEventApi[index]);}});return compatiblePropertyAndEvent;}},{key:'togglePauseResume',value:function togglePauseResume(hidden){var command=document[hidden]?'pause':'play';hidden && this[command]();}},{key:'play',value:function play(){if(this.wasPlaying == false){console.log('play: was not playing');return;}console.log('play: issue play');this.container.play();if(this.options.visibilityEnableIcon){document.title = this.originalTitle;}}},{key:'pause',value:function pause(){this.wasPlaying = this.container.isPlaying();if(this.wasPlaying == false){console.log('pause: was not playing');return;}console.log('pause: issue pause');this.container.pause();if(this.options.visibilityEnableIcon){document.title = '⏸  ' + this.originalTitle;}}},{key:'stopListening',value:function stopListening(){document.removeEventListener(this.visibilityEvent,this.onVisibilityChange);}},{key:'name',get:function get(){return 'clappr_pause_tab_visibility';}}]);return ClapprPauseTabVisibility;})(_clappr.ContainerPlugin);exports['default'] = ClapprPauseTabVisibility;module.exports = exports['default'];
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
+
+/***/ })
+/******/ ])
+});
+;

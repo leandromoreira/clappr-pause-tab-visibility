@@ -7,6 +7,7 @@ export default class ClapprPauseTabVisibility extends ContainerPlugin {
     var [hidden, visibilityEvent] = this.resoleVisibilityAPI()
     this.visibilityEvent = visibilityEvent
     this.originalTitle = document.title
+    this.wasPlaying = false;
     this.onVisibilityChange = () => this.togglePauseResume(hidden)
 
     document.addEventListener(this.visibilityEvent, this.onVisibilityChange)
@@ -33,11 +34,20 @@ export default class ClapprPauseTabVisibility extends ContainerPlugin {
   }
 
   play() {
+    if(this.wasPlaying == false) {
+      return;
+    }
+
     this.container.play()
     if (this.options.visibilityEnableIcon) { document.title = this.originalTitle }
   }
 
   pause() {
+    this.wasPlaying = this.container.isPlaying()
+    if(this.wasPlaying == false) {
+      return;
+    }
+
     this.container.pause()
     if (this.options.visibilityEnableIcon) { document.title = `\u23F8  ${this.originalTitle}` }
   }
