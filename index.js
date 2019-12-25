@@ -34,7 +34,7 @@ export default class ClapprPauseTabVisibility extends ContainerPlugin {
   }
 
   play() {
-    if(this.wasPlaying == false) {
+    if(!this.wasPlaying) {
       return;
     }
 
@@ -44,7 +44,7 @@ export default class ClapprPauseTabVisibility extends ContainerPlugin {
 
   pause() {
     this.wasPlaying = this.container.isPlaying()
-    if(this.wasPlaying == false) {
+    if(!this.wasPlaying) {
       return;
     }
 
